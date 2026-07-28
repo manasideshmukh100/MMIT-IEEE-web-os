@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  body {
+    background-color: #0f1321;
+    color: #dfe1f6;
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, h5, h6, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0d1c;
+}
+::-webkit-scrollbar-thumb {
+  background: #424754;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #adc6ff;
+}
+
+/* Glassmorphism Panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(173, 198, 255, 0.3);
+  box-shadow: 0 0 25px rgba(173, 198, 255, 0.15);
+}
+
+.neon-glow {
+  box-shadow: 0 0 15px rgba(173, 198, 255, 0.2), inset 0 0 5px rgba(173, 198, 255, 0.1);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 20px rgba(47, 217, 244, 0.25), inset 0 0 8px rgba(47, 217, 244, 0.15);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 20px rgba(210, 187, 255, 0.25), inset 0 0 8px rgba(210, 187, 255, 0.15);
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.floating {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* 3D Carousel Perspective */
+.carousel-container {
+  perspective: 2000px;
+  height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-wheel {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.carousel-item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  backface-visibility: hidden;
+  transition: all 0.5s ease;
+}
+
+/* Custom Scanlines effect for terminal */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+}
+

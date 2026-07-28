@@ -1,0 +1,6 @@
+{
+  "name": "MMIT IEEE OS",
+  "description": "MMIT IEEE Student Branch Engineering Operating System with Executive Committee network, 3D Events Orbit, Project Archives, and Interactive System Terminal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
