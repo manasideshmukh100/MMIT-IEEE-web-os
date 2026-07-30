@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { supabase } from './lib/supabase'; // <-- Importing your clean supabase client here
 import { BackgroundShader } from './components/BackgroundShader';
 import { TopNavBar } from './components/TopNavBar';
 import { HeroSection } from './components/HeroSection';
@@ -23,6 +24,26 @@ export default function App() {
   const [selectedEvent, setSelectedEvent] = useState<EventItem | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
   const [terminalModalOpen, setTerminalModalOpen] = useState(false);
+
+  // State to store database events
+  const [supabaseEvents, setSupabaseEvents] = useState<any[]>([]);
+
+  useEffect(() => {
+    async function fetchEvents() {
+      const { data, error } = await supabase
+        .from('events')
+        .select('*');
+
+      if (error) {
+        console.error('Error fetching events from Supabase:', error);
+      } else if (data) {
+        setSupabaseEvents(data);
+        console.log('Fetched events from Supabase:', data);
+      }
+    }
+
+    fetchEvents();
+  }, []);
 
   const scrollToSection = (id: string) => {
     setActiveSection(id);
