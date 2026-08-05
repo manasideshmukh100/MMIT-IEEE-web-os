@@ -328,7 +328,7 @@ This project was developed for the **MMIT IEEE Student Branch** and its web deve
 **Manasi Deshmukh**
 
 MMIT Pune
-B.E. / B.Tech — Artificial Intelligence & Data Science
+B.E. — Artificial Intelligence & Data Science
 
 ---
 
