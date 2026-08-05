@@ -2,7 +2,6 @@
 
 > **Live Website:** https://mmit-ieee-web-os.vercel.app/
 
-> **GitHub Repository:** https://github.com/manasideshmukh100/MMIT-IEEE-web-os
 
 An interactive, futuristic **IEEE Student Branch Web OS** built for **MMIT Pune**, designed to showcase the student branch, executive committee, events, projects, achievements, and member activities through a modern 3D-inspired interface.
 
